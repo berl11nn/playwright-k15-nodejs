@@ -15,7 +15,7 @@ module.exports = defineConfig({
         // base URL sẽ apply cho tất cả test
         baseURL: 'https://the-internet.herokuapp.com',
 
-        //Implicit wait -> Sẽ timeout cho tất cả locator 5
+        //Implicit wait -> Sẽ timeout cho tất cả locator
         actionTimeout: 5 * 1000,
 
         //Chỉnh chạy headless hay không
