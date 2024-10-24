@@ -1,5 +1,5 @@
 import test from "@playwright/test";
-import { getAdParams, scrollToBottom } from "../utils/PageHelper";
+import { getAdParams, scrollToBottom } from "../../utils/PageHelper";
 
 test('Handle JS Alert', async ({ page }) => {
 

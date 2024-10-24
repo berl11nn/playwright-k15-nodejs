@@ -11,7 +11,12 @@ export default class HeaderComponent {
     }
 
     //Narrow down searching scope
-    HeaderLogo(): Locator{
+    headerLogo(): Locator{
         return this.component.locator(this.headerLogoSel);
     }
+
+    /**
+     * HomePage >>> headerComp >>>  HeaderLogo
+     * 
+     */
 }

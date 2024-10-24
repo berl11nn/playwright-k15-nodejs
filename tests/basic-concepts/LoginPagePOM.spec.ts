@@ -1,6 +1,6 @@
 import test from "@playwright/test";
-import LoginPage01 from "../models/pages/Login/LoginPageMethod01";
-import LoginPage02 from "../models/pages/Login/LoginPageMethod02";
+import LoginPage01 from "../../models/pages/Login/LoginPageMethod01";
+import LoginPage02 from "../../models/pages/Login/LoginPageMethod02";
 
 test('Test POM method 01 - Main interaction method', async ({ page }) => {
 

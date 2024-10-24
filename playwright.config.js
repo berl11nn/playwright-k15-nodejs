@@ -13,7 +13,7 @@ module.exports = defineConfig({
     use:
     {
         // base URL sẽ apply cho tất cả test
-        baseURL: 'https://the-internet.herokuapp.com',
+        baseURL: 'https://demowebshop.tricentis.com/',
 
         //Implicit wait -> Sẽ timeout cho tất cả locator
         actionTimeout: 5 * 1000,
