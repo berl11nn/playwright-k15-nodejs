@@ -2,6 +2,7 @@ import test from "@playwright/test";
 import LoginPage01 from "../../models/pages/Login/LoginPageMethod01";
 import LoginPage02 from "../../models/pages/Login/LoginPageMethod02";
 
+// @ts-ignore
 test('Test POM method 01 - Main interaction method', async ({ page }) => {
 
     //Go to the login page
@@ -20,6 +21,7 @@ test('Test POM method 01 - Main interaction method', async ({ page }) => {
     await page.waitForTimeout(3000);
 })
 
+// @ts-ignore
 test('Test POM method 02 - Found Elements', async ({ page }) => {
 
     //Go to the login page

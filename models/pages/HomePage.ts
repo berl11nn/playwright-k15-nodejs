@@ -22,4 +22,14 @@ export class HomePage {
     footerComponent(): FooterComponent {
         return new FooterComponent(this.page.locator(FooterComponent.selector))
     }
+
+    
+    /**
+     * Không thể khai báo test data trong component thì sẽ có 2 solution
+     * Solution 01: Dùng (ghi) thẳng component trong test flow, không phải trong Page ví dụ như homePage
+     * Solution 02: Dùng component trong page như bình thường
+     * - 1. Provide test data into page object => (không dùng được narrow down searching scope)
+     * - 2.
+     */
+    
 }

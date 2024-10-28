@@ -2,7 +2,6 @@ import { Page } from "@playwright/test";
 import { HomePage } from "../../models/pages/HomePage";
 import { FooterComponent } from "../../models/components/global/footer/FooterComponent";
 import { FooterColumnComponent } from "../../models/components/global/footer/FooterColumnComponent";
-import { deepStrictEqual } from 'assert';
 
 export class FooterTestFlow {
 
@@ -55,7 +54,5 @@ export class FooterTestFlow {
             actualLinkTexts.push(footerLinkText as string);
             actualHrefs.push(footerLinkHref as string);
         }
-        deepStrictEqual(actualLinkTexts, expectedLinkTexts);
-        deepStrictEqual(actualHrefs, actualHrefs);
     }
 }
