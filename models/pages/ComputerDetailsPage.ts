@@ -1,15 +1,16 @@
 import { Locator, Page } from "@playwright/test";
 import { ComputerEssentialComponent } from "../components/computer/ComputerEssentialComponent";
-
-export class ComputerDetailsPage {
-    constructor(private page: Page) {
-        this.page = page;
-    }
-
-
-    computerComponent<T extends ComputerEssentialComponent>(computerComponentClass: ComputerComponentConstructor<T>): T {
-            return new computerComponentClass(this.page.locator(computerComponentClass.selectorValue));
-    }
-}
+import {BasePage} from "./BasePage";
 
 export type ComputerComponentConstructor<T extends ComputerEssentialComponent> = new (componentClass: Locator) => T;
+
+export class ComputerDetailsPage extends BasePage{
+
+    constructor(page: Page) {
+        super(page);
+    }
+
+    computerComp<T extends ComputerEssentialComponent>(computerComponentClass: ComputerComponentConstructor<T>): T {
+        return new computerComponentClass(this.page.locator(computerComponentClass.selectorValue));
+    }
+}

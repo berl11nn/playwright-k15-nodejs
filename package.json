@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@playwright/test": "1.42.1"
+    "@playwright/test": "1.42.1",
+    "@types/node": "^22.9.0"
   }
 }

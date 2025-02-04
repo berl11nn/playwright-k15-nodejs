@@ -10,6 +10,6 @@ export class FooterComponent {
     }
 
     informationColumnComponent(): InformationColumnComponent{
-        return new InformationColumnComponent(this.component.locator(InformationColumnComponent.selector));
+        return new InformationColumnComponent(this.component.locator(InformationColumnComponent.selectorValue));
     }
 }
