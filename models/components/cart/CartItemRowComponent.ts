@@ -7,9 +7,9 @@ export class CartItemRowComponent {
         this.component = component;
     }
 
-    private unitPriceSel = '';
-    private quantityInputSel = '';
-    private subTotalSel = '';
+    private unitPriceSel = '.product-unit-price';
+    private quantityInputSel = '.qty-input';
+    private subTotalSel = '.product-subtotal';
 
     public async unitPrice(): Promise<number> {
         const unitPriceText =  await this.component.locator(this.unitPriceSel).textContent();

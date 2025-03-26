@@ -10,7 +10,9 @@ export class ComputerDetailsPage extends BasePage{
         super(page);
     }
 
-    computerComp<T extends ComputerEssentialComponent>(computerComponentClass: ComputerComponentConstructor<T>): T {
+    computerComp<T extends ComputerEssentialComponent>(
+        computerComponentClass: ComputerComponentConstructor<T>
+    ): T {
         return new computerComponentClass(this.page.locator(computerComponentClass.selectorValue));
     }
 }

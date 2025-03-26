@@ -3,7 +3,6 @@ import { InformationColumnComponent } from "../models/components/global/footer/I
 
 function getComponentSelector(compClass: any){
     console.log(compClass.selectorValue);
-    
 }
 
 test('Test decorator', ()=> {

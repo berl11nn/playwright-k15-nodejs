@@ -1,4 +1,4 @@
-import {Page} from "@playwright/test";
+import {expect, Page} from "@playwright/test";
 import {ComputerDetailsPage} from "../../models/pages/ComputerDetailsPage";
 import {ComputerEssentialComponent} from "../../models/components/computer/ComputerEssentialComponent";
 import {ComputerDataType} from "../../test-data/computer/ComputerDataType";
@@ -72,10 +72,30 @@ export class OrderComputerFlow extends LoginFlow {
     async verifyShoppingCart() {
         const shoppingCartPage: ShoppingCartPage = new ShoppingCartPage(this.page);
         const cartItemRowComponentList = await shoppingCartPage.cartItemRowsComponentList();
+        const totalComponent = shoppingCartPage.totalComponent();
+
+        for (let cartItemRow of cartItemRowComponentList) {
+            const unitPrice = await cartItemRow.unitPrice();
+            const quantity = await cartItemRow.quantity();
+            const subTotal = await cartItemRow.subTotal();
+            expect(unitPrice * quantity).toBe(subTotal);
+        }
+
+        const priceCategories = await totalComponent.priceCategories();
+
+        const subTotal = priceCategories["Sub-Total:"];
+        const shippingFee = priceCategories["Shipping:"];
+        const tax = priceCategories["Tax:"];
+        const total = priceCategories["Total:"];
+        expect(total).toBe(subTotal + shippingFee + tax);
+        expect(total).toBe(this.totalPrice);
     }
 
     async agreeTOSAndCheckOut() {
-        throw new Error("TBD")
+        const shoppingCartPage: ShoppingCartPage = new ShoppingCartPage(this.page);
+        const totalComponent = shoppingCartPage.totalComponent();
+        await totalComponent.acceptTOS();
+        await totalComponent.clickOnCheckOutBtn();
     }
 }
 
