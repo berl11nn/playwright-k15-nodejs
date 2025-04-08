@@ -4,6 +4,8 @@ import {ComputerEssentialComponent} from "../../models/components/computer/Compu
 import {ComputerDataType} from "../../test-data/computer/ComputerDataType";
 import {LoginFlow} from "../LoginFlow";
 import {ShoppingCartPage} from "../../models/pages/ShoppingCartPage";
+import {CheckOutOptionPage} from "../../models/pages/CheckOutOptionPage";
+import defaultCheckoutUser from '../../test-data/computer/'
 
 export class OrderComputerFlow extends LoginFlow {
 
@@ -96,7 +98,36 @@ export class OrderComputerFlow extends LoginFlow {
         const totalComponent = shoppingCartPage.totalComponent();
         await totalComponent.acceptTOS();
         await totalComponent.clickOnCheckOutBtn();
+
+        //Checkout as guest, you can spit logic for return customer
+        await new CheckOutOptionPage(this.page).clickOnCheckOutAsGuestBtn();
     }
+
+    async inputBillingAddress(){
+
+    }
+
+    async inputShippingAddress(){
+
+    }
+
+    async selectShippingMethod(){
+
+    }
+
+    async selectPaymentMethod(){
+
+    }
+
+    async inputPaymentInfo(){
+
+    } m
+
+    async confirmOrder(){
+
+    }
+
+
 }
 
 /**

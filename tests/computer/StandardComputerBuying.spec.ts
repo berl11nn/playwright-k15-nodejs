@@ -6,7 +6,7 @@ import {PageNavigators} from "../../models/pages/PageNavigators";
 
 standardComputerData.forEach(computerData => {
     test(`Test Standard computer component | RAM: ${computerData.ram}`, async ({page}) => {
-        console.log(computerData)
+        // console.log(computerData)
         await page.goto("/build-your-own-computer")
         const orderComputerFlow: OrderComputerFlow = new OrderComputerFlow(page, computerData);
         await orderComputerFlow.login();

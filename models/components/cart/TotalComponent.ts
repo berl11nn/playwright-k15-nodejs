@@ -1,6 +1,5 @@
 import {selector} from "../SelectorDecorator";
 import {Locator} from "@playwright/test";
-import {CartItemRowComponent} from "./CartItemRowComponent";
 
 @selector('.totals')
 export class TotalComponent {

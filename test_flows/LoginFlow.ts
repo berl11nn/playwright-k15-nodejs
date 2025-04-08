@@ -3,9 +3,9 @@ import {LoginSelectors} from "../models/pages/Login/LoginSelector";
 
 export class LoginFlow {
 
-    constructor(protected page: Page,private loginCreds: {
+    constructor(protected page: Page, private loginCreds: {
         username: string,
-        password: string,
+        password: string
     }) {
         this.page = page;
         this.loginCreds = loginCreds;

@@ -12,7 +12,7 @@ export class HomePage {
         //HeaderComponent.selector: string
         //Trả về 1 object với constructor là dạng Locator
         // Lúc đó muốn tìm header chỉ cần chỉ cho biết header đang nằm ở đâu trong HomePage
-        return new HeaderComponent(this.page.locator(HeaderComponent.selector));
+        return new HeaderComponent(this.page.locator(HeaderComponent.selectorValue));
     }
 
     pageBodyComponent(): PageBodyComponent {

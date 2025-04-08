@@ -1,7 +1,7 @@
 import {CheapComputerComponent} from "../../models/components/computer/CheapComputerComponent";
 import {commonLoginCreds, exceptLoginCreds} from "../LoginCredData";
 
-export const cheapComputerData = [
+export const cheapComputerData =  [
     {
         loginCreds: commonLoginCreds,
         computerCompClass: CheapComputerComponent,
